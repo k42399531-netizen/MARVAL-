@@ -1,0 +1,158 @@
+*{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+}
+/* background*/
+body{
+         background-image: url("images/background.png");
+         background-size: cover;
+         background-position: center;
+         background-repeat: no-repeat;
+         min-height: 100vh;
+}
+/* nav bar*/
+.navbar{
+         position: fixed;
+}
+.navbar-nav{
+         display: flex;
+         width: 100%;
+         align-items: center;
+}
+.navbar-title-item{
+         margin-left: auto;
+         margin-right: auto;
+}
+.navbar-title{
+         text-align: center;
+         text-decoration: dashed;
+         margin: 0;
+}
+.navbar-movie-btn{
+         margin-left: 10px;
+}
+.navbar-movie-btn{
+         border-radius: 5rem;
+         background-color: black;
+         color:white;
+         padding: 2px;
+}
+/* slide*/
+.slider-container {
+         position: relative;
+         max-width: 800px;
+         margin: auto;
+         overflow: hidden; /* لإخفاء الشرائح غير النشطة */
+         border-radius: 10px;
+     }
+     
+     .slide {
+         display: none; /* إخفاء الكل افتراضياً */
+         animation: fade 0.5s ease-in-out; /* تأثير ظهور ناعم */
+     }
+     
+     .slide.active {
+         display: block; /* إظهار الشريحة النشطة فقط */
+     }
+     
+    /* صور السلايدر فقط (عشان ما نأثرش على باقي صور الموقع) */
+    .slider-container img {
+        width: 45%;
+        max-width: 320px;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+     
+     /* أزرار التحكم */
+     .prev, .next {
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         background: rgba(0,0,0,0.5);
+         color: white;
+         border: none;
+         padding: 15px;
+         cursor: pointer;
+     }
+     
+     .next { right: 0; }
+     
+     @keyframes fade {
+         from { opacity: 0.4; }
+         to { opacity: 1; }
+     }
+/* textes*/
+.texts {
+    padding: 80px 20px 60px;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.texts h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 
+                 0 0 20px rgba(220, 20, 60, 0.6);
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    animation: fadeInUp 1s ease-out;
+}
+
+.texts h1 u {
+    text-decoration: none;
+    border-bottom: 4px solid #dc143c;
+    padding-bottom: 10px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.texts h1:hover u {
+    border-bottom-color: #ff1744;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 
+                 0 0 30px rgba(220, 20, 60, 0.9);
+    transform: scale(1.05);
+}
+#article{
+    position: relative;
+    color: black;
+    font: 2em sans-serif;
+    text-align: right;
+    z-index: 2000;
+    padding: 20px;
+    background-color: white;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تحسينات للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .texts {
+        padding: 60px 15px 40px;
+        margin: 30px 15px;
+    }
+    
+    .texts h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+}
+/* final navbar*/

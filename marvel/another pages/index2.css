@@ -1,0 +1,456 @@
+/* =========================================
+   إعدادات عامة للصفحة (Global Settings)
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1{
+    color: black;
+    font-size: 1.5rem;
+    text-decoration: overline;
+    text-align: center;
+}
+
+body {
+    background-color: #151515;
+    background-image: radial-gradient(circle at 50% 50%, #1e1e1e 0%, #151515 100%);
+    color: #f0f0f0;
+    direction: rtl;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* =========================================
+   شريط التنقل (Navigation Bar)
+   ========================================= */
+.main_navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(21, 21, 21, 0.9);
+    border-bottom: 2px solid #ed1d24;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+}
+
+.main_navbar h1 {
+    color: #ed1d24;
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(237, 29, 36, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.main_navbar h1:hover {
+    transform: scale(1.05);
+}
+
+.main_navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.main_navbar ul li a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.main_navbar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ed1d24;
+    transition: width 0.3s ease;
+}
+
+.main_navbar ul li a:hover {
+    color: #fff;
+}
+
+.main_navbar ul li a:hover::after {
+    width: 100%;
+}
+
+/* شريط البحث */
+.search {
+    display: flex;
+    gap: 10px;
+    background: #252525;
+    padding: 6px;
+    border-radius: 50px;
+    border: 1px solid #444;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.search:focus-within {
+    border-color: #ed1d24;
+    box-shadow: 0 0 10px rgba(237, 29, 36, 0.2);
+}
+
+#search_input {
+    background: transparent;
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    outline: none;
+    width: 220px;
+    font-size: 0.95rem;
+}
+
+.search #button {
+    background: #ed1d24;
+    color: white;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search #button:hover {
+    background: #c7151b;
+    transform: scale(1.05);
+}
+
+/* =========================================
+   العناوين والأقسام (Sections & Headers)
+   ========================================= */
+.top {
+    text-align: center;
+    margin: 50px 0 30px;
+    position: relative;
+}
+
+.top h2 {
+    display: inline-block;
+    font-size: 2.2rem;
+    color: #fff;
+    border-bottom: 3px solid #ed1d24;
+    padding-bottom: 12px;
+    text-shadow: 0 0 15px rgba(237, 29, 36, 0.4);
+    position: relative;
+}
+
+.top h2::before {
+    content: '\f005'; /* Star icon from FontAwesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ed1d24;
+    font-size: 1.2rem;
+}
+
+.top h2::after {
+    content: '\f005'; /* Star icon from FontAwesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ed1d24;
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   حاوية الأفلام (Movies Grid)
+   ========================================= */
+.main, #financial_filmes, #top_filmes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+    padding: 20px 6%;
+    width: 100%;
+}
+
+/* بطاقة الفيلم */
+.movie-card {
+    background: #222;
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 160px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.movie-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(237, 29, 36, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(237, 29, 36, 0.2);
+    border-color: #ed1d24;
+    background: #282828;
+}
+
+.movie-card:hover::before {
+    opacity: 1;
+}
+
+/* أيقونة الفيلم */
+.movie-card a::before {
+    content: '\f008'; /* Film icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #555;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.movie-card:hover a::before {
+    color: #ed1d24;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.movie-card a {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    text-decoration: none;
+}
+
+.movie-card p.revenue {
+    color: #ccc;
+    font-size: 1rem;
+    margin-top: 10px;
+    font-family: 'Consolas', monospace;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 6px 12px;
+    border-radius: 8px;
+    width: 100%;
+    border: 1px solid #444;
+    z-index: 1;
+    position: relative;
+}
+
+.movie-card.financial a::before {
+    content: '\f4c0'; /* Money/Hand holding dollar icon */
+}
+
+.movie-card.top-rated a::before {
+    content: '\f005'; /* Star icon */
+}
+
+/* =========================================
+   معرض الصور السفلي (Gallery)
+   ========================================= */
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 60px 5%;
+    background: #111;
+    margin-top: 60px;
+    border-top: 1px solid #333;
+    position: relative;
+}
+
+.gallery-container::before {
+    content: 'معرض الصور';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #151515;
+    padding: 0 20px;
+    color: #777;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.gallery-container img {
+    width: 260px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: all 0.5s ease;
+    filter: grayscale(60%) brightness(0.8);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.08) translateY(-10px);
+    filter: grayscale(0%) brightness(1.1);
+    box-shadow: 0 20px 40px rgba(237, 29, 36, 0.3);
+    z-index: 10;
+    border: 2px solid #ed1d24;
+}
+
+/* =========================================
+   رسالة الترحيب (Welcome Message) - كما هي
+   ========================================= */
+#welcome_message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(40, 40, 40, 0.98));
+    color: white;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(220, 20, 60, 0.4);
+    z-index: 9999;
+    width: 85%;
+    max-width: 700px;
+    border: 2px solid rgba(220, 20, 60, 0.5);
+    backdrop-filter: blur(15px);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: fadeIn 0.5s ease-out;
+}
+
+#welcome_message h2 {
+    color: #ed1d24; /* Marvel Red */
+    margin-bottom: 25px;
+    font-size: 2.8em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+#welcome_message p {
+    font-size: 1.3em;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    color: #f0f0f0;
+    font-weight: 500;
+}
+
+#start_button {
+    background: linear-gradient(45deg, #ed1d24, #c7151b);
+    color: white;
+    border: none;
+    padding: 15px 45px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(237, 29, 36, 0.4);
+    outline: none;
+}
+
+#start_button:hover {
+    background: linear-gradient(45deg, #ff2e36, #e61b22);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(237, 29, 36, 0.6);
+}
+
+#start_button:active {
+    transform: translateY(-1px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* =========================================
+   التجاوب مع الشاشات (Responsive Design)
+   ========================================= */
+@media (max-width: 768px) {
+    .main_navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .main_navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .search {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    #search_input {
+        width: 60%;
+    }
+
+    .main, #financial_filmes, #top_filmes {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+        padding: 10px 20px;
+    }
+    
+    #welcome_message {
+        padding: 30px;
+        width: 95%;
+    }
+    
+    #welcome_message h2 {
+        font-size: 2em;
+    }
+}
+
+.welcome_hidden{
+    opacity: 0;
+    visibility: hidden;
+}

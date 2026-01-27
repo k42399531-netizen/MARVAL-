@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>عالم مارفل</title>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+         <link rel="stylesheet" href="sign in .css">
+</head>
+<body>
+    <!-- form-->
+     <form action="index2.html" method="post">
+        <h2>تسجيل الدخول</h2>
+        <br>
+        <label for="name" id="text">user_name</label>
+        <br>
+        <input type="text" placeholder="ادخل اسمك" id="user_name" class="input">
+        <br>
+        <div class="div" id="div1"></div>
+        <br>
+        <label for="email"> email</label>
+        <br>
+        <input type="email" name="email" id="email" class="input" placeholder="ادخل ايميلك">
+        <br>
+        <div class="div" id="div2"></div>
+        <br>
+        <label for="password">رقم السر</label>
+                <div class="password-group">
+                    <input type="password" id="password" name="password" placeholder="ادخل رقم السر" class="input">
+                    <button type="button" class="eye" id="togglePassword">
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
+                    <br>
+                  <div class="div" id="div3"></div>
+                  <br>
+                </div>
+                <button type="submit" class="submit-btn" id="signi">تسجيل الدخول</button>
+     </form>
+         <!-- javascript-->
+          <script src="signi.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+/* --- المتغيرات الأساسية --- */
+:root {
+    --marvel-red: #e62429;
+    --dark-bg: #050505;
+    --card-bg: #151515;
+    --text-gray: #bbbbbb;
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* --- الإعدادات العامة --- */
+body {
+    background-color: var(--dark-bg);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    line-height: 1.6;
+}
+
+/* تخصيص شريط التمرير (Scrollbar) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--marvel-red);
+    border-radius: 10px;
+}
+
+/* --- القسم العلوي (Main Section) --- */
+.main {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+    padding: 40px;
+    border-radius: 20px;
+    border-right: 5px solid var(--marvel-red);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.main h2 {
+    color: var(--marvel-red);
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.main p {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.main img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+/* --- شبكة الأبطال (Heroes Grid) --- */
+#show {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- كارت البطل (Hero Card) --- */
+.hero-card {
+    position: relative;
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: var(--transition);
+}
+
+.hero-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--marvel-red);
+    box-shadow: 0 15px 30px rgba(230, 36, 41, 0.3);
+}
+
+/* حاوية الصورة */
+.img-container {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.hero-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.hero-card:hover img {
+    transform: scale(1.1);
+}
+
+/* طبقة المعلومات (Overlay Info) */
+.hero-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 20%, transparent);
+    text-align: right;
+}
+
+.hero-card h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.hero-card p {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    margin: 10px 0;
+    height: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.hero-card:hover p {
+    height: auto;
+    opacity: 1;
+    margin-bottom: 15px;
+}
+
+/* زر المشاهدة (Watch Button) */
+.watch-btn {
+    display: inline-block;
+    background-color: var(--marvel-red);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.watch-btn:hover {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+}
+
+/* --- الاستجابة (Responsive) --- */
+@media (max-width: 768px) {
+    .main h2 { font-size: 2rem; }
+    .main { padding: 20px; }
+    .hero-card p { height: auto; opacity: 1; } /* إظهار النص دائماً في الموبايل */
+}

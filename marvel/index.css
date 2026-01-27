@@ -1,0 +1,273 @@
+*{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+}
+/* background*/
+body{
+         background-image: url("images/background.png");
+         background-size: cover;
+         background-position: center;
+         background-repeat: no-repeat;
+         min-height: 100vh;
+}
+/* nav bar*/
+.navbar{
+         position: fixed;
+}
+.navbar-nav{
+         display: flex;
+         width: 100%;
+         align-items: center;
+}
+.navbar-title-item{
+         margin-left: auto;
+         margin-right: auto;
+}
+.navbar-title{
+         text-align: center;
+         text-decoration: dashed;
+         margin: 0;
+}
+.navbar-movie-btn{
+         margin-left: 10px;
+}
+.navbar-movie-btn{
+         border-radius: 5rem;
+         background-color: black;
+         color:white;
+         padding: 2px;
+}
+/* slide*/
+.slider-container {
+         position: relative;
+         max-width: 800px;
+         margin: auto;
+         overflow: hidden; /* لإخفاء الشرائح غير النشطة */
+         border-radius: 10px;
+     }
+     
+     .slide {
+         display: none; /* إخفاء الكل افتراضياً */
+         animation: fade 0.5s ease-in-out; /* تأثير ظهور ناعم */
+     }
+     
+     .slide.active {
+         display: block; /* إظهار الشريحة النشطة فقط */
+     }
+     
+    /* صور السلايدر فقط (عشان ما نأثرش على باقي صور الموقع) */
+    .slider-container img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        aspect-ratio: 3/4;
+        display: block;
+        margin: 20px auto;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+    }
+     
+     /* أزرار التحكم */
+     .prev, .next {
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         background: rgba(0,0,0,0.5);
+         color: white;
+         border: none;
+         padding: 15px;
+         cursor: pointer;
+     }
+     
+     .next { right: 0; }
+     
+     @keyframes fade {
+         from { opacity: 0.4; }
+         to { opacity: 1; }
+     }
+/* texts */
+.texts {
+    padding: 80px 20px 60px;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.texts h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 
+                 0 0 20px rgba(220, 20, 60, 0.6);
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    animation: fadeInUp 1s ease-out;
+}
+
+.texts h1 u {
+    text-decoration: none;
+    border-bottom: 4px solid #dc143c;
+    padding-bottom: 10px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.texts h1:hover u {
+    border-bottom-color: #ff1744;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 
+                 0 0 30px rgba(220, 20, 60, 0.9);
+    transform: scale(1.05);
+}
+#article{
+    position: relative;
+    color: black;
+    font: 2em sans-serif;
+    text-align: right;
+    z-index: 2000;
+    padding: 20px;
+    background-color: white;
+}
+/* preview message */
+.message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 50px 60px;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8),
+                0 0 40px rgba(220, 20, 60, 0.3);
+    border: 2px solid rgba(220, 20, 60, 0.5);
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    z-index: 10000;
+    animation: slideInDown 0.6s ease-out;
+}
+
+.message h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9),
+                 0 0 25px rgba(220, 20, 60, 0.7);
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.message p {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: right;
+    direction: rtl;
+}
+
+.message button {
+    padding: 12px 35px;
+    margin: 10px 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.message #bt1 {
+    background: linear-gradient(135deg, #dc143c, #ff1744);
+    color: white;
+    box-shadow: 0 5px 15px rgba(220, 20, 60, 0.4);
+}
+
+.message #bt1:hover {
+    background: linear-gradient(135deg, #ff1744, #ff4567);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(220, 20, 60, 0.6);
+}
+
+.message #bt2 {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.message #bt2:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+.message_unactive{
+    visibility: hidden;
+    opacity: 0;
+}
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تحسينات للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .texts {
+        padding: 60px 15px 40px;
+        margin: 30px 15px;
+    }
+    
+    .texts h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    .message {
+        padding: 40px 30px;
+        max-width: 90%;
+    }
+    
+    .message h1 {
+        font-size: 2rem;
+    }
+    
+    .message p {
+        font-size: 1rem;
+    }
+    
+    .message button {
+        padding: 10px 25px;
+        font-size: 1rem;
+        margin: 8px 10px;
+        display: block;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
