@@ -53,7 +53,7 @@ Plaintext
 This project was built with a focus on Clean Code and Scalability. By centralizing the data in JavaScript objects, adding new movies or teams requires zero changes to the HTML structure, demonstrating a "Dry" (Don't Repeat Yourself) programming approach.
 
 
-the link is : https://stalwart-wisp-13f357.netlify.app/
+the link is : https://golden-caramel-3e1df5.netlify.app/
 
 
 t
