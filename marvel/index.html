@@ -1,90 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-         <meta charset="UTF-8">
-         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <!-- linkes-->
-         <link rel="stylesheet" href="index.css">
-         <title>marvel</title>
-         <link rel="stylesheet" href="librares/bottstrap.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>موقع مارفل</title>
+  <link rel="stylesheet" href="index.css">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+/>
 </head>
 <body>
-         <!-- navbar-->
-         <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                  <div class="container-fluid">
+  <!--navbar-->
+    <nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-right">
+            <a href="#" class="logo-brand">
+                <span class="marvel-tag">MARVEL</span> <span class="studio-tag">STUDIO</span>
+            </a>
+        </div>
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="another pages/sign in .html" target="_blank">sign in</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="another pages/we.html" target="_blank">we</a>
-                        </li>
-                        <li class="navbar-title-item"><h1 class="navbar-title">MARVEL STUDIO</h1></li>
-                        <li class="navbar-movie-item"><a href="another pages/index2.html" target="_blank"><button class="navbar-movie-btn" type="button">movie</button></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </nav>
-                <!-- slide-->
-                <div class="slider-container">
-                  <div class="slider">
-                      <div class="slide active">
-                        <a href="https://s.fushar.video/video-x-men-origins-wolverine-2009-ar-online/" target="_blank"><img src="images/walvren.jfif"></a>
-                      </div>
-                      <div class="slide">
-                         <a href="https://w.cimalight.co/watch.php?vid=00e899acf" target="_blank"> <img src="images/doctor-strange1.jpg" > </a>
-                      </div>
-                      <div class="slide">
-                          <a href="https://w.cimalight.co/watch.php?vid=0355c70fc" target="_blank"><img src="images/sbider man.jfif" ></a>
-                      </div>
-                      <div class="slide">
-                          <a href="https://w.cimalight.co/watch.php?vid=20553c1e2" target="_blank"><img src="images/iron man.jpg" target="_blank"></a>
-                      </div>
-                      <div class="slide">
-                          <a href="https://topcinema.rip/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-loki-%D9%85%D8%AA%D8%B1%D8%AC%D9%85/" target="_blank"><img src="images/loky.jfif" ></a>
-                      </div>
-                  </div>
-             
-                  <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-                  <button class="next" onclick="changeSlide(1)">&#10095;</button>
-              </div>
-              <!-- preview message -->
-               <section class="message" id="private_message">
-                <h1>الخصوصية</h1>
-                <p>هذا من اكثر المواقع حماية للخصوصية </p>
-                <p>شروطنا هي :
-                  <br>
-                   1سجل حساب لتشاهد الافلام 
-                   <br>
-                  2- يحق لاي مستخدم روية حسابك
-                </p>
-                <p>المصادر : 
-                  <br>
-                  1- IMBB => الافلام 
-                  <br>
-                  2- reddit
-                  <br>
-                  3-google gemini
-                </p>
-                <p>هل توافق؟</p>
-                <button id="bt1">اوافق</button>
-                <button id="bt2">لا اوافق</button>
-               </section>
-               <!-- texts -->
-                <section class="texts" id="texts">
-                  <h1><u> تاريخ الشركة</u></h1>
-                  <button id="button">قراءة المزيد</button>
-                </section>
-                <!-- final nav bar-->
-                 <section><img src="images/casaini.png" alt="casain" width="100"></section>
-         <!-- javascript-->
-         <script src="index.js"></script>
-         <script src="librares/bottstrap.js"></script>
+        <div class="nav-left">
+            <div class="nav-links">
+                <a href="another pages/we.html" class="nav-item">من نحن</a>
+                <a href="another pages/sign in .html" class="nav-item">تسجيل دخول</a>
+                <a href="another pages/index2.html" class="nav-btn-link">
+                    <button class="btn-movies">استعرض الأفلام</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>  
+<!--slide-->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="images/doctor-strange1.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/iron man.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/thor.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/loky.jfif" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/sbider man.jfif" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/avenger.jfif" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/fantastic four.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/defernce.jfif" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/X_man.jfif" />
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <!--information-->
+    <div>
+      <button id="button">عرض المعلومات</button>
+    </div>
+    <div id="information" class="eventes_hidden">
+      <p>
+        تأسست شركة مارفل في عام 1939 تحت اسم "تایملي بوليكايشنز" (Timely Publications) وبدأت بشخصيات مثل "نامور" و"هيومان تورتش".
+
+شهدت الستينيات "العصر الذهبي" للشركة بقيادة الكاتب ستان لي والرسام جاك كيربي، حيث ابتكرا شخصيات ذات طابع بشري واقعي.
+
+تفرّد أبطال مارفل عن غيرهم بأنهم يمتلكون عيوباً ومشاكل يومية؛ فسبايدرمان يعاني من الفقر، والهالك يعاني من الغضب.
+
+تقع معظم أحداث قصص مارفل في مدينة نيويورك الحقيقية، مما عزز شعور القراء بأن هذه الأبطال يعيشون بينهم.
+
+يعتبر عالم مارفل السينمائي (MCU) أضخم مشروع سينمائي مترابط، حيث بدأ بفيلم "Iron Man" عام 2008.
+
+تُقسم أفلام مارفل إلى "مراحل" (Phases)، وكل مجموعة مراحل تشكل حقبة زمنية كبرى مثل "The Infinity Saga".
+
+شخصية توني ستارك تمثل الدمج بين الذكاء البرمجي والابتكار التقني، وهو ما يلهم الكثير من المبرمجين حول العالم.
+
+تعتبر سلسلة "X-Men" من أقوى سلاسل مارفل، حيث تناقش قضايا التمييز والقبول من خلال شخصيات "المتحولين".
+
+في عام 2009، استحوذت شركة ديزني على مارفل مقابل 4 مليارات دولار، في صفقة غيرت موازين صناعة الترفيه.
+
+تتوسع مارفل حالياً في مفهوم الأكوان المتعددة (Multiverse)، مما يسمح بظهور نسخ مختلفة من الأبطال في زمن واحد.
+
+تمتلك مارفل بوابة للمطورين (Marvel API) تتيح الوصول لبيانات أكثر من 70 عاماً من القصص المصورة لأغراض البرمجة.
+
+شخصية بلاك بانثر أحدثت ثورة ثقافية بتقديمها مدينة "واكاندا" كأكثر المدن تقدماً تقنياً في العالم الخيالي.
+
+تشتهر أفلام مارفل بمشاهد "ما بعد التتر" (Post-credits) التي تلمح للأحداث القادمة، مما خلق حالة من الحماس الدائم.
+
+تعتمد القوة في مارفل على مصادر متنوعة: علمية (هالك)، سحرية (دكتور سترينج)، فضائية (ثور)، أو تقنية (آيرون مان).
+
+"ثانوس" يعتبر أحد أعظم الأشرار في تاريخ السينما بسبب فلسفته المعقدة حول الموارد والتوازن الكوني.
+
+حقق فيلم Avengers: Endgame أرقاماً قياسية تاريخية، حيث أصبح لفترة أطول الأفلام تحقيقاً للإيرادات في التاريخ.
+
+توفر مارفل خدمة "Marvel Unlimited" وهي مكتبة رقمية تضم أكثر من 30 ألف عدد من القصص المصورة.
+
+التصميم البصري (Visual Design) في أفلام مارفل يعتمد على تقنيات CGI متطورة جداً تضع معايير عالية لمصممي الجرافيك.
+
+انتقلت مارفل مؤخراً إلى الشاشة الصغيرة عبر مسلسلات "Disney+" مثل "WandaVision" و"Loki" لتعميق القصص الجانبية.
+
+يظل شعار مارفل "Excelsior!" الذي كان يردده ستان لي رمزاً للطموح والارتقاء الدائم نحو الأفضل.
+      </p>
+    </div>
+<!--javascript-->
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<script src="index.js"></script>
 </body>
 </html>
